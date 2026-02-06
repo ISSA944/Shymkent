@@ -1,0 +1,669 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Шымкентмай — натуральное масло</title>
+
+    <!-- Fonts (под макет: Montserrat Alternates + Raleway) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="is-loading">
+    <div class="site-preloader" data-preloader aria-hidden="true">
+        <div class="site-preloader__content">
+        <img class="site-preloader__logo" src="images/image 1.svg" alt="ШЫМКЕНТМАЙ">
+        <p class="site-preloader__subtitle" data-i18n="preloader_subtitle">Natural oil</p>
+        <div class="site-preloader__dots" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header__inner">
+        <a class="brand" href="#">
+            <img src="images/image 1.svg" alt="ШЫМКЕНТМАЙ" class="brand__logo" />
+        </a>
+
+        <nav class="nav" id="nav">
+            <a class="nav__link is-active" href="#top" data-i18n="nav_home">Главная</a>
+            <a class="nav__link" href="#advantages" data-i18n="nav_advantages">Преимущества</a>
+            <a class="nav__link" href="#history" data-i18n="nav_about">О компании</a>
+            <a class="nav__link" href="#gallery" data-i18n="nav_gallery">Галерея</a>
+            <a class="nav__link" href="#products" data-i18n="nav_products">Продукция</a>
+            <a class="nav__link" href="#shareholders" data-i18n="nav_shareholders">Акционерам</a>
+            <a class="nav__link" href="#partners" data-i18n="nav_partners">Партнёрам</a>
+            <a class="nav__link" href="#contacts" data-i18n="nav_contacts">Контакты</a>
+            <a class="nav__link" href="#prices" data-i18n="nav_prices">Цены</a>
+        </nav>
+
+        <div class="header__actions">
+            <div class="lang" role="group" aria-label="Language switch">
+            <button class="lang__btn" type="button" id="langToggle" aria-pressed="false">RU</button>
+            </div>
+
+            <a class="btn btn--primary header__cta" href="#contacts" data-i18n="cta_contact">
+            Связаться с нами
+            </a>
+
+            <button class="burger" type="button" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+            </button>
+        </div>
+        </div>
+    </header>
+
+    <nav id="mobileMenu" class="mobile-nav"></nav>
+
+    <!-- MAIN / HERO (по твоему: 1729×817) -->
+    <main id="top" class="main">
+        <section class="hero" aria-label="Hero">
+        <div class="container hero__inner">
+            <!-- LEFT CONTENT (твои размеры content ~1082×653 логика сохранена через grid и max-width) -->
+            <div class="hero__content">
+            <div class="hero__badge">
+                <svg class="hero__badge-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                </svg>
+                <span data-i18n="badge_natural">100% Натуральное</span>
+            </div>
+
+            <h1 class="hero__title">
+                <span data-i18n="hero_title_1">«Доня» — натуральное</span>
+                <span>
+                <span data-i18n="hero_title_2">масло с</span>
+                <span class="hero__accent" data-i18n="hero_title_3">богатым</span>
+                <span data-i18n="hero_title_4">вкусом!</span>
+                </span>
+            </h1>
+
+            <p class="hero__text" data-i18n="hero_text">
+                Натуральное и высококачественное масло «Донья» – отличный выбор для приготовления пищи, жарки и заправки салатов. Благодаря тщательному отбору сырья и современным технологиям производства, оно сохраняет полезные свойства и насыщенный вкус. Многие хозяйки уже оценили его удобную упаковку и доступную цену.
+            </p>
+
+            <div class="hero__buttons">
+                <a class="btn btn--orange" href="#products" data-i18n="btn_products">Наша продукция</a>
+                <a class="btn btn--ghost" href="#history" data-i18n="btn_about">О компании</a>
+            </div>
+
+            <!-- COUNTERS (из твоих скринов: общий контейнер 618×118) -->
+            <div class="counters" aria-label="Counters">
+                <div class="counter">
+                <div class="counter__value">25+</div>
+                <div class="counter__label" data-i18n="counter_years">Лет опыта</div>
+                </div>
+
+                <div class="counter">
+                <div class="counter__value">100%</div>
+                <div class="counter__label" data-i18n="counter_natural">Натуральное</div>
+                </div>
+
+                <div class="counter">
+                <div class="counter__value">50+</div>
+                <div class="counter__label" data-i18n="counter_regions">Регионов</div>
+                </div>
+            </div>
+            </div>
+
+            <!-- RIGHT IMAGE композиция -->
+            <div class="hero__visual" aria-label="Product image">
+            <div class="hero-figure" role="img" aria-label="Подсолнечное масло и подсолнухи">
+                <div class="hero-figure__bg" aria-hidden="true"></div>
+
+                <!-- Подсолнухи -->
+                <img class="hero-figure__sun hero-figure__sun--left"
+                    src="assets/image 6.png"
+                    alt=""
+                    loading="lazy" />
+
+            <img class="hero-figure__sun hero-figure__sun--right"
+                src="assets/image 7.png"
+                alt=""
+                loading="lazy" />
+
+        <!-- Бутылка -->
+            <img class="hero-figure__bottle"
+            src="assets/image 2 (1).png"
+            alt="Подсолнечное масло"
+            loading="eager" />
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Заглушки секций -->
+        <section id="about" class="section">
+        <div class="container">
+        </div>
+        </section>
+
+        <section id="products" class="products-section">
+        <div class="container">
+            <div class="products">
+            <div class="products-track">
+
+                <!-- Обычное масло 1 -->
+                <div class="card regular">
+                <div class="card-bg"></div>
+                <img src="assets/image 2 (1).png" class="bottle" alt="">
+                <img src="assets/image 6 (1).png" class="flower regular-left-bottom" alt="">
+                <img src="assets/image 7 (1).png" class="flower regular-right" alt="">
+                <p class="card-title" data-i18n="product_sunflower">Нерафинированное подсолнечное масло</p>
+                </div>
+
+                <!-- Рафинированное масло 1 -->
+                <div class="card refined">
+                <div class="card-bg"></div>
+                <img src="assets/image.png" class="bottle" alt="">
+                <img src="assets/image 9.png" class="flower refined-left" alt="">
+                <img src="assets/image 10.png" class="flower refined-right" alt="">
+                <p class="card-title" data-i18n="product_safflower">Сафлоровое масло</p>
+                </div>
+
+                <!-- Обычное масло 2 -->
+                <div class="card regular">
+                <div class="card-bg"></div>
+                <img src="assets/image 2 (1).png" class="bottle" alt="">
+                <img src="assets/image 6 (1).png" class="flower regular-left-bottom" alt="">
+                <img src="assets/image 7 (1).png" class="flower regular-right" alt="">
+                <p class="card-title" data-i18n="product_sunflower">Нерафинированное подсолнечное масло</p>
+                </div>
+
+                <!-- Рафинированное масло 2 -->
+                <div class="card refined">
+                <div class="card-bg"></div>
+                <img src="assets/image.png" class="bottle" alt="">
+                <img src="assets/image 9.png" class="flower refined-left" alt="">
+                <img src="assets/image 10.png" class="flower refined-right" alt="">
+                <p class="card-title" data-i18n="product_safflower">Сафлоровое масло</p>
+                </div>
+
+                <!-- Обычное масло 3 -->
+                <div class="card regular">
+                <div class="card-bg"></div>
+                <img src="assets/image 2 (1).png" class="bottle" alt="">
+                <img src="assets/image 6 (1).png" class="flower regular-left-bottom" alt="">
+                <img src="assets/image 7 (1).png" class="flower regular-right" alt="">
+                <p class="card-title" data-i18n="product_sunflower">Нерафинированное подсолнечное масло</p>
+                </div>
+
+                <!-- Рафинированное масло 3 -->
+                <div class="card refined">
+                <div class="card-bg"></div>
+                <img src="assets/image.png" class="bottle" alt="">
+                <img src="assets/image 9.png" class="flower refined-left" alt="">
+                <img src="assets/image 10.png" class="flower refined-right" alt="">
+                <p class="card-title" data-i18n="product_safflower">Сафлоровое масло</p>
+                </div>
+
+                <!-- Обычное масло 4 -->
+                <div class="card regular">
+                <div class="card-bg"></div>
+                <img src="assets/image 2 (1).png" class="bottle" alt="">
+                <img src="assets/image 6 (1).png" class="flower regular-left-bottom" alt="">
+                <img src="assets/image 7 (1).png" class="flower regular-right" alt="">
+                <p class="card-title" data-i18n="product_sunflower">Нерафинированное подсолнечное масло</p>
+                </div>
+
+                <!-- Рафинированное масло 4 -->
+                <div class="card refined">
+                <div class="card-bg"></div>
+                <img src="assets/image.png" class="bottle" alt="">
+                <img src="assets/image 9.png" class="flower refined-left" alt="">
+                <img src="assets/image 10.png" class="flower refined-right" alt="">
+                <p class="card-title" data-i18n="product_safflower">Сафлоровое масло</p>
+                </div>
+
+                <!-- Обычное масло 5 -->
+                <div class="card regular">
+                <div class="card-bg"></div>
+                <img src="assets/image 2 (1).png" class="bottle" alt="">
+                <img src="assets/image 6 (1).png" class="flower regular-left-bottom" alt="">
+                <img src="assets/image 7 (1).png" class="flower regular-right" alt="">
+                <p class="card-title" data-i18n="product_sunflower">Нерафинированное подсолнечное масло</p>
+                </div>
+
+                <!-- Рафинированное масло 5 -->
+                <div class="card refined">
+                <div class="card-bg"></div>
+                <img src="assets/image.png" class="bottle" alt="">
+                <img src="assets/image 9.png" class="flower refined-left" alt="">
+                <img src="assets/image 10.png" class="flower refined-right" alt="">
+                <p class="card-title" data-i18n="product_safflower">Сафлоровое масло</p>
+                </div>
+
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Секция ПРЕИМУЩЕСТВА -->
+        <section id="advantages" class="advantages advantages--tabs">
+        <div class="container">
+            <h2 class="advantages__title" data-i18n="advantages_title">Преимущества</h2>
+            <p class="advantages__text" data-i18n="advantages_text">
+            Уже более 25 лет мы создаём продукт, в котором сочетаются природа, технологии и опыт. Каждый 
+            этап — от отбора сырья до розлива — проходит под строгим контролем, чтобы вы получали 
+            натуральное масло высокого качества. Мы не останавливаемся на достигнутом: модернизируем 
+            производство, улучшаем рецептуры и внедряем инновации, чтобы соответствовать самым 
+            высоким стандартам и ожиданиям наших потребителей.
+            </p>
+ 
+            <div class="advantages-tabs" role="tablist" aria-label="Advantages">
+              <button class="advantages-tab is-active" type="button" role="tab" aria-selected="true" data-adv-target="natural" data-i18n="adv_tab_natural">Натуральный состав</button>
+              <button class="advantages-tab" type="button" role="tab" aria-selected="false" data-adv-target="tech" data-i18n="adv_tab_tech">Современные технологии</button>
+              <button class="advantages-tab" type="button" role="tab" aria-selected="false" data-adv-target="trust" data-i18n="adv_tab_trust">25 лет доверия и развития</button>
+            </div>
+
+            <div class="advantages-slider" id="advantagesSlider">
+            <div class="advantages-slider__viewport" id="advantagesViewport">
+            <div class="advantages__grid advantages-slider__track" id="advantagesTrack">
+            <!-- Карточка 1: Натуральный состав -->
+            <div class="advantage-card advantage-card--green is-active" data-adv="natural" role="tabpanel">
+                <div class="advantage-card__icon-wrap">
+                <svg class="advantage-card__icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                </svg>
+                </div>
+                <h3 class="advantage-card__title" data-i18n="advantage_natural_title">Натуральный состав</h3>
+                <p class="advantage-card__text" data-i18n="advantage_natural_text">
+                Масло Donya изготавливается исключительно из отборных семян подсолнечника без добавления консервантов, ароматизаторов и ГМО. Мы сохраняем естественный вкус и пользу, делая продукт безопасным и полезным для всей семьи.
+                </p>
+            </div>
+
+            <!-- Карточка 2: Современные технологии -->
+            <div class="advantage-card advantage-card--orange" data-adv="tech" role="tabpanel" hidden>
+                <div class="advantage-card__icon-wrap">
+                <svg class="advantage-card__icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"/>
+                </svg>
+                </div>
+                <h3 class="advantage-card__title" data-i18n="advantage_tech_title">Современные технологии</h3>
+                <p class="advantage-card__text" data-i18n="advantage_tech_text">
+                Производство оснащено высокотехничным оборудованием, соответствующим международным стандартам качества. Каждый этап — от очистки и отжима до фасовки — проходит строгий контроль, что позволяет нам обеспечивать стабильное качество и свежесть продукции.
+                </p>
+            </div>
+
+            <!-- Карточка 3: 25 лет доверия -->
+            <div class="advantage-card advantage-card--red" data-adv="trust" role="tabpanel" hidden>
+                <div class="advantage-card__icon-wrap">
+                <svg class="advantage-card__icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                    <path d="M4 22h16"/>
+                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+                </svg>
+                </div>
+                <h3 class="advantage-card__title" data-i18n="advantage_trust_title">25 лет доверия и развития</h3>
+                <p class="advantage-card__text" data-i18n="advantage_trust_text">
+                На протяжении более 25 лет мы уверенно развиваемся на рынке, внедряем инновации и совершенствуем процессы. Нам доверяют миллионы семей, профессиональные повара и крупнейшие торговые сети по всему Казахстану и за его пределами.
+                </p>
+            </div>
+            </div>
+            </div>
+            <div class="advantages-controls" aria-hidden="true">
+                <button class="advantages-arrow prev" type="button" aria-label="Previous slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon--chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <div class="advantages-progress">
+                    <span class="advantages-progress__bar"></span>
+                </div>
+                <button class="advantages-arrow next" type="button" aria-label="Next slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon--chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- История компании -->
+        <section id="history" class="history-section">
+        <div class="container">
+            <h2 class="history__title" data-i18n="history_title">О компании</h2>
+            <p class="history__subtitle" data-i18n="history_subtitle">
+            Более 25 лет мы развиваемся, внедряем инновации<br>
+            и стремимся к качеству, которое делает нас<br>
+            лидерами в производстве растительных масел
+            </p>
+
+            <!-- Timeline -->
+            <div class="timeline">
+            <div class="timeline__years">
+                <button class="timeline__year timeline__year--active" data-year="1998" data-from="1998" data-to="2003" data-modal-title-ru="Основание компании" data-modal-text-ru="В этот период компания заложила прочную основу: сформировала команду, запустила первые производственные линии и определила стандарты качества на годы вперёд." data-modal-title-en="Company Foundation" data-modal-text-en="During this period, the company built a strong foundation: formed the team, launched the first production lines, and set quality standards for years ahead.">1998</button>
+                <button class="timeline__year" data-year="2003" data-from="2003" data-to="2008" data-modal-title-ru="Рост и расширение" data-modal-text-ru="Компания расширила мощности и укрепила позиции на внутреннем рынке." data-modal-title-en="Growth and Expansion" data-modal-text-en="The company expanded capacity and strengthened its position in the domestic market.">2003</button>
+                <button class="timeline__year" data-year="2008" data-from="2008" data-to="2012" data-modal-title-ru="Технологическое обновление" data-modal-text-ru="Проведена модернизация оборудования и усилен контроль качества продукции." data-modal-title-en="Technology Upgrade" data-modal-text-en="Equipment was modernized and product quality control was enhanced.">2008</button>
+                <button class="timeline__year" data-year="2012" data-from="2012" data-to="2016" data-modal-title-ru="Масштабирование производства" data-modal-text-ru="Увеличены объемы выпуска и расширена география поставок по регионам." data-modal-title-en="Production Scaling" data-modal-text-en="Output increased and regional supply geography expanded.">2012</button>
+                <button class="timeline__year" data-year="2016" data-from="2016" data-to="2020" data-modal-title-ru="Новые стандарты" data-modal-text-ru="Внедрены современные процессы и улучшены внутренние производственные стандарты." data-modal-title-en="New Standards" data-modal-text-en="Modern processes were introduced and internal production standards were improved.">2016</button>
+                <button class="timeline__year" data-year="2020" data-from="2020" data-to="2024" data-modal-title-ru="Устойчивое развитие" data-modal-text-ru="Компания усилила партнёрскую сеть и продолжила развитие продуктовой линейки." data-modal-title-en="Sustainable Development" data-modal-text-en="The company strengthened its partner network and continued developing the product line.">2020</button>
+                <button class="timeline__year" data-year="2024" data-from="2024" data-to="2026" data-modal-title-ru="Текущий этап" data-modal-text-ru="Фокус на инновациях, качестве и дальнейшем росте на стратегических рынках." data-modal-title-en="Current Stage" data-modal-text-en="Focus on innovation, quality, and further growth in strategic markets.">2024</button>
+            </div>
+
+            <div class="timeline__line">
+                <div class="timeline__progress"></div>
+                <div class="timeline__dot timeline__dot--start">1998</div>
+                <div class="timeline__dot timeline__dot--end">2003</div>
+            </div>
+            </div>
+
+            <!-- Content -->
+            <div class="history__content">
+            <div class="history__text-block">
+                <h3 class="history__content-title" data-i18n="history_foundation_title">Основание компании</h3>
+                <p class="history__content-subtitle" data-i18n="history_foundation_subtitle">Начало пути в пищевой индустрии Казахстана</p>
+
+                <p class="history__content-text" data-i18n="history_foundation_text">
+                АО «Шымкентмай» было основано с целью производства высококачественных растительных масел. Первый завод был построен в городе Шымкент с современным оборудованием.
+                </p>
+
+                <div class="history__achievements">
+                <p class="history__achievements-title" data-i18n="history_achievements_title">Ключевые достижения:</p>
+                <ul class="history__achievements-list">
+                    <li data-i18n="history_achiev_1">Первый завод в Шымкенте</li>
+                    <li data-i18n="history_achiev_2">Команда из 50 сотрудников</li>
+                    <li data-i18n="history_achiev_3">Местное производство</li>
+                </ul>
+                </div>
+
+                <div class="history__president">
+                <img src="assets/image (2).png" alt="Президент" class="history__president-img">
+                <div>
+                    <p class="history__president-title" data-i18n="history_president_title">Президент АО «Шымкентмай»</p>
+                    <p class="history__president-name" data-i18n="history_president_name">Адирбеков Данияр Жолдиярович</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="history__image-block">
+                <img src="assets/image (1).png" alt="Завод" class="history__image">
+            </div>
+            </div>
+        </div>
+        </section>
+
+<!-- Галерея -->
+        <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="gallery__title" data-i18n="gallery_title">Галерея</h2>
+            
+            <div class="gallery__wrapper">
+            <div class="gallery-slider" id="gallerySlider">
+                <div class="gallery-slider__viewport">
+                <div class="gallery-slider__track" id="galleryTrack"></div>
+                </div>
+                <div class="gallery-counter" id="galleryCounter" aria-live="polite">
+                    <span class="gallery-counter__current">01</span>/<span class="gallery-counter__total">03</span>
+                </div>
+                <button class="gallery-arrow prev" type="button" aria-label="Previous slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon--chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button class="gallery-arrow next" type="button" aria-label="Next slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon--chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Нашим Партнерам -->
+        <section id="partners" class="partners-section">
+        <div class="container">
+            <div class="partners__inner">
+            <div class="partners__content">
+                <h2 class="partners__title" data-i18n="partners_title">Нашим Партнерам</h2>
+                <p class="partners__subtitle" data-i18n="partners_subtitle">Shymkent Mai</p>
+                
+                <p class="partners__text" data-i18n="partners_text">
+                АО «Шымкентмай» является не только производителем, но и распространителем своей продукции. 
+                В настоящее время АО «Шымкентмай» активно продвигает свою продукцию в самых густонаселенных 
+                регионах Казахстана: Туркестанская область, Алматы и Алматинская область, где проживает более 
+                25% населения всей Республики.
+                </p>
+                
+                <form class="partners__form" id="partnersForm">
+                <div class="partners__field">
+                    <span class="partners__float-label" data-i18n="form_name">Ваше имя</span>
+                    <input type="text" class="partners__input" name="name" placeholder="Ваше имя" data-i18n-placeholder="form_name">
+                </div>
+                <div class="partners__field">
+                    <span class="partners__float-label" data-i18n="form_phone">Ваш номер телефона</span>
+                    <input type="tel" class="partners__input" name="phone" inputmode="numeric" placeholder="Ваш номер телефона" data-i18n-placeholder="form_phone">
+                </div>
+                <button type="submit" class="partners__button" data-i18n="form_button">Отправить</button>
+                </form>
+                
+                <div class="partners__contacts">
+                <div class="partners__contact-item">
+                    <p class="partners__contact-label" data-i18n="partners_sales_contacts">Контакты отдела сбыта:</p>
+                    <a href="tel:+87252538384" class="partners__phone"><span class="partners__phone-prefix">Tel:</span> <span class="partners__phone-number">8 (7252) 53 83 84</span></a>
+                </div>
+                <div class="partners__contact-item">
+                    <p class="partners__contact-label" data-i18n="partners_rep_almaty">Представительство в г. Алматы:</p>
+                    <a href="tel:+77778580571" class="partners__phone"><span class="partners__phone-prefix">Tel:</span> <span class="partners__phone-number">+7 778 580 50 71</span></a>
+                </div>
+                <div class="partners__contact-item">
+                    <p class="partners__contact-label" data-i18n="partners_rep_astana">Представительство в г. Астана:</p>
+                    <a href="tel:+77077656763" class="partners__phone"><span class="partners__phone-prefix">Tel:</span> <span class="partners__phone-number">+7 707 765 67 63</span></a>
+                </div>
+                </div>
+                
+                <p class="partners__email">E-mail: <a href="mailto:sbl2@donya.kz">sbl2@donya.kz</a></p>
+            </div>
+            
+            <div class="partners__image-wrapper">
+                <img src="assets/image (6).png" alt="Подсолнух" class="partners__image">
+            </div>
+            </div>
+        </div>
+        </section>
+
+<section id="awards" class="awards-section">
+    <div class="container">
+
+    <h2 class="awards__title" data-i18n="awards_title">Награды</h2>
+
+    <p class="awards__subtitle" data-i18n="awards_subtitle">
+        Являясь постоянно развивающейся компанией, мы ищем
+        талантливых и увлеченных людей, желающих развивать свою
+        карьеру в одной из ведущих крупных компаний
+        масложировой отрасли страны.
+    </p>
+
+    <div class="awards__grid">
+
+        <!-- CARD 1 -->
+        <div class="award-card">
+        <div class="award-card__image-wrapper">
+            <img src="assets/image (7).png" alt="Food Expo 2005" class="award-card__image">
+            <div class="award-card__badge">2005 год</div>
+        </div>
+
+        <h3 class="award-card__title">Food Expo 2005</h3>
+
+        <p class="award-card__text" data-i18n="award_2008_text">
+            В 2008 году АО «Шымкентмай» получило на фестивале «Алтын дастархан» «Приз потребительских симпатий» в номинации «общепотребительские промышленные товары».
+        </p>
+
+        <button class="award-card__button" data-i18n="award_button" data-award-title-ru="Связаться с участником Food Expo 2005" data-award-title-en="Contact the Food Expo 2005 participant" data-award-text-ru="Свяжитесь с участником выставки Food Expo 2005 и узнайте больше о сотрудничестве." data-award-text-en="Contact the Food Expo 2005 participant and learn more about cooperation.">Связаться</button>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="award-card">
+        <div class="award-card__image-wrapper">
+            <img src="assets/image (8).png" alt="Food Expo 2003" class="award-card__image">
+            <div class="award-card__badge">2003 год</div>
+        </div>
+
+        <h3 class="award-card__title">Food Expo 2003</h3>
+
+        <p class="award-card__text" data-i18n="award_text">
+            Являясь постоянно развивающейся компанией, мы ищем
+            талантливых и увлеченных людей, желающих развивать
+            свою карьеру в одной из ведущих крупных компаний
+            масложировой отрасли страны.
+        </p>
+
+        <button class="award-card__button" data-i18n="award_button" data-award-title-ru="Связаться с участником Food Expo 2003" data-award-title-en="Contact the Food Expo 2003 participant" data-award-text-ru="Свяжитесь с участником выставки Food Expo 2003 и получите информацию о партнёрстве." data-award-text-en="Contact the Food Expo 2003 participant and get partnership details.">Связаться</button>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="award-card">
+        <div class="award-card__image-wrapper">
+            <img src="assets/image (9).png" alt="Алтын Дастархан" class="award-card__image">
+            <div class="award-card__badge">2008 год</div>
+        </div>
+
+        <h3 class="award-card__title">Алтын Дастархан</h3>
+
+        <p class="award-card__text" data-i18n="award_text">
+            Являясь постоянно развивающейся компанией, мы ищем
+            талантливых и увлеченных людей, желающих развивать
+            свою карьеру в одной из ведущих крупных компаний
+            масложировой отрасли страны.
+        </p>
+
+        <button class="award-card__button" data-i18n="award_button" data-award-title-ru="Связаться с призёром «Алтын Дастархан»" data-award-title-en="Contact the Altyn Dastarkhan awardee" data-award-text-ru="В 2008 году АО «Шымкентмай» получило на фестивале «Алтын дастархан» «Приз потребительских симпатий» в номинации «общепотребительские промышленные товары»." data-award-text-en="In 2008, Shymkentmai received the Audience Choice award at the Altyn Dastarkhan festival in the “general consumer industrial goods” category.">Связаться</button>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="award-card">
+        <div class="award-card__image-wrapper">
+            <img src="assets/image (10).png" alt="Лучший экспортер" class="award-card__image">
+            <div class="award-card__badge">2015 год</div>
+        </div>
+
+        <h3 class="award-card__title">Лучший экспортер</h3>
+
+        <p class="award-card__text" data-i18n="award_text">
+            Являясь постоянно развивающейся компанией, мы ищем
+            талантливых и увлеченных людей, желающих развивать
+            свою карьеру в одной из ведущих крупных компаний
+            масложировой отрасли страны.
+        </p>
+
+        <button class="award-card__button" data-i18n="award_button" data-award-title-ru="Связаться с компанией «Лучший экспортер»" data-award-title-en="Contact the Best Exporter awardee" data-award-text-ru="Свяжитесь с компанией‑лауреатом «Лучший экспортер» для обсуждения сотрудничества." data-award-text-en="Contact the Best Exporter awardee to discuss сотрудничество.">Связаться</button>
+        </div>
+
+    </div>
+    </div>
+</section>
+
+<div class="award-modal" id="awardModal" aria-hidden="true">
+  <div class="award-modal__backdrop" data-award-close></div>
+  <div class="award-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="awardModalTitle">
+    <button class="award-modal__close" type="button" aria-label="Close" data-award-close>×</button>
+    <h3 class="award-modal__title" id="awardModalTitle">Связаться</h3>
+    <p class="award-modal__text" data-i18n="award_modal_text">
+      Оставьте заявку или свяжитесь с нами любым удобным способом.
+    </p>
+    <div class="award-modal__contacts">
+      <div class="award-modal__row">
+        <span data-i18n="award_modal_phone">Телефон:</span>
+        <a href="tel:+77252538382">+7 7252 538382</a>
+      </div>
+      <div class="award-modal__row">
+        <span data-i18n="award_modal_email">E-mail:</span>
+        <a href="mailto:info@donya.kz">info@donya.kz</a>
+      </div>
+    </div>
+    <button class="award-modal__action" type="button" data-award-close data-i18n="award_modal_close">Закрыть</button>
+  </div>
+</div>
+
+    </main>
+
+    <footer id="contacts" class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div class="footer-col footer-left">
+        <img src="assets/image 2 (3).png" alt="ШЫМКЕНТМАЙ" class="footer-logo" />
+
+        <p class="footer-desc" data-i18n="footer_desc">
+          Ведущий производитель высококачественного подсолнечного масла в Казахстане с более чем 25-летним опытом.
+        </p>
+
+        <div class="footer-social">
+          <a class="social-link" href="#" aria-label="Instagram" title="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a class="social-link" href="#" aria-label="Facebook" title="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-row">
+      <div class="footer-col footer-links">
+        <h3 class="footer-title" data-i18n="quick_links">Быстрые ссылки</h3>
+        <ul class="footer-list">
+          <li><a href="#" class="footer-link" data-i18n="home">Главная</a></li>
+          <li><a href="#" class="footer-link" data-i18n="about">О компании</a></li>
+          <li><a href="#" class="footer-link" data-i18n="products">Продукция</a></li>
+          <li><a href="#" class="footer-link" data-i18n="news">Новости</a></li>
+          <li><a href="#contacts" class="footer-link" data-i18n="contacts">Контакты</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contacts">
+        <h3 class="footer-title" data-i18n="contacts_title">Контакты</h3>
+
+        <div class="contact-item">
+          <span class="contact-ico"><i data-lucide="phone"></i></span>
+          <div class="contact-text">
+            <a class="contact-main contact-accent" href="tel:+77252538382">+7 7252 538382</a>
+            <div class="contact-sub" data-i18n="work_time">Пн-Пт: 9:00-18:00</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-ico"><i data-lucide="mail"></i></span>
+          <div class="contact-text">
+            <a class="contact-main contact-accent" href="mailto:info@donya.kz">info@donya.kz</a>
+            <div class="contact-sub" data-i18n="reply_time">Ответим в течение 24 часов</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-ico"><i data-lucide="map-pin"></i></span>
+          <div class="contact-text">
+            <div class="contact-main contact-accent" data-i18n="country">Казахстан</div>
+            <div class="contact-sub" data-i18n="city">Шымкент</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner" data-i18n="copyright">
+      © 2025 АО «ШЫМКЕНТМАЙ». Все права защищены.
+    </div>
+  </div>
+    </footer>
+  </div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
