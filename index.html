@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
@@ -495,8 +495,8 @@
 
         <h3 class="award-card__title">Food Expo 2005</h3>
 
-        <p class="award-card__text" data-i18n="award_2008_text">
-            В 2008 году АО «Шымкентмай» получило на фестивале «Алтын дастархан» «Приз потребительских симпатий» в номинации «общепотребительские промышленные товары».
+        <p class="award-card__text" data-i18n="award_text">
+            Являясь постоянно развивающейся компанией, мы ищем талантливых и увлеченных людей, желающих развивать свою карьеру в одной из ведущих крупных компаний масложировой отрасли страны.
         </p>
 
         <button class="award-card__button" data-i18n="award_button" data-award-title-ru="Связаться с участником Food Expo 2005" data-award-title-en="Contact the Food Expo 2005 participant" data-award-text-ru="Свяжитесь с участником выставки Food Expo 2005 и узнайте больше о сотрудничестве." data-award-text-en="Contact the Food Expo 2005 participant and learn more about cooperation.">Связаться</button>
@@ -528,7 +528,7 @@
             <div class="award-card__badge">2008 год</div>
         </div>
 
-        <h3 class="award-card__title">Алтын Дастархан</h3>
+        <h3 class="award-card__title" data-i18n="award_altyn_title">Алтын Дастархан</h3>
 
         <p class="award-card__text" data-i18n="award_text">
             Являясь постоянно развивающейся компанией, мы ищем
@@ -547,7 +547,7 @@
             <div class="award-card__badge">2015 год</div>
         </div>
 
-        <h3 class="award-card__title">Лучший экспортер</h3>
+        <h3 class="award-card__title" data-i18n="award_best_exporter_title">Лучший экспортер</h3>
 
         <p class="award-card__text" data-i18n="award_text">
             Являясь постоянно развивающейся компанией, мы ищем
@@ -556,7 +556,7 @@
             масложировой отрасли страны.
         </p>
 
-        <button class="award-card__button" data-i18n="award_button" data-award-title-ru="Связаться с компанией «Лучший экспортер»" data-award-title-en="Contact the Best Exporter awardee" data-award-text-ru="Свяжитесь с компанией‑лауреатом «Лучший экспортер» для обсуждения сотрудничества." data-award-text-en="Contact the Best Exporter awardee to discuss сотрудничество.">Связаться</button>
+        <button class="award-card__button" data-i18n="award_button" data-award-title-ru="Связаться с компанией «Лучший экспортер»" data-award-title-en="Contact the Best Exporter awardee" data-award-text-ru="Свяжитесь с компанией‑лауреатом «Лучший экспортер» для обсуждения сотрудничества." data-award-text-en="Contact the Best Exporter awardee to discuss cooperation.">Связаться</button>
         </div>
 
     </div>
@@ -571,17 +571,17 @@
     <p class="award-modal__text" data-i18n="award_modal_text">
       Оставьте заявку или свяжитесь с нами любым удобным способом.
     </p>
-    <div class="award-modal__contacts">
-      <div class="award-modal__row">
-        <span data-i18n="award_modal_phone">Телефон:</span>
-        <a href="tel:+77252538382">+7 7252 538382</a>
+    <form class="award-modal__form" id="awardModalForm">
+      <div class="award-modal__field">
+        <span class="award-modal__label" data-i18n="form_name">Ваше имя</span>
+        <input type="text" class="award-modal__input" name="name" placeholder="Ваше имя" data-i18n-placeholder="form_name">
       </div>
-      <div class="award-modal__row">
-        <span data-i18n="award_modal_email">E-mail:</span>
-        <a href="mailto:info@donya.kz">info@donya.kz</a>
+      <div class="award-modal__field">
+        <span class="award-modal__label" data-i18n="form_phone">Ваш номер телефона</span>
+        <input type="tel" class="award-modal__input" name="phone" inputmode="numeric" placeholder="Ваш номер телефона" data-i18n-placeholder="form_phone">
       </div>
-    </div>
-    <button class="award-modal__action" type="button" data-award-close data-i18n="award_modal_close">Закрыть</button>
+      <button class="award-modal__action" type="submit" data-i18n="award_modal_close">Отправить</button>
+    </form>
   </div>
 </div>
 
