@@ -1,4 +1,4 @@
-﻿// Unified lightweight i18n for instant language switch (no reload)
+// Unified lightweight i18n for instant language switch (no reload)
 const translations = {
   ru: {
     site_title: "Шымкентмай — натуральное масло",
@@ -61,11 +61,11 @@ const translations = {
     awards_subtitle: "Являясь постоянно развивающейся компанией, мы ищем талантливых и увлеченных людей, желающих развивать свою карьеру в одной из ведущих крупных компаний масложировой отрасли страны.",
     award_text: "Являясь постоянно развивающейся компанией, мы ищем талантливых и увлеченных людей, желающих развивать свою карьеру в одной из ведущих крупных компаний масложировой отрасли страны.",
     award_button: "Связаться",
+    award_altyn_title: "Алтын Дастархан",
+    award_best_exporter_title: "Лучший экспортер",
     award_2008_text: "В 2008 году АО «Шымкентмай» получило на фестивале «Алтын дастархан» «Приз потребительских симпатий» в номинации «общепотребительские промышленные товары».",
     award_modal_text: "Оставьте заявку или свяжитесь с нами любым удобным способом.",
-    award_modal_phone: "Телефон:",
-    award_modal_email: "E-mail:",
-    award_modal_close: "Закрыть",
+    award_modal_close: "Отправить",
 
     partners_title: "Нашим Партнерам",
     partners_subtitle: "Shymkent Mai",
@@ -170,11 +170,11 @@ const translations = {
     awards_subtitle: "As a growing company, we seek talented and passionate people who want to develop their careers in one of the country's leading large companies in the fat-and-oil industry.",
     award_text: "As a growing company, we seek talented and passionate people who want to develop their careers in one of the country's leading large companies in the fat-and-oil industry.",
     award_button: "Contact",
+    award_altyn_title: "Altyn Dastarkhan",
+    award_best_exporter_title: "Best Exporter",
     award_2008_text: "In 2008, Shymkentmai received the Audience Choice award at the Altyn Dastarkhan festival in the “general consumer industrial goods” category.",
     award_modal_text: "Leave a request or contact us in any convenient way.",
-    award_modal_phone: "Phone:",
-    award_modal_email: "E-mail:",
-    award_modal_close: "Close",
+    award_modal_close: "Send",
 
     partners_title: "For Our Partners",
     partners_subtitle: "Shymkent Mai",
@@ -241,13 +241,23 @@ function setPreloaderVisible(visible) {
   document.body.classList.toggle("is-loading", visible);
 }
 
-function switchLanguageWithPreloader(nextLang) {
+function switchLanguageWithPreloader(nextLang, options = {}) {
+  const keepMenuOpen = options.keepMenuOpen !== false;
   const now = Date.now();
   if (preloaderState.isSwitchingLanguage || now - preloaderState.lastToggleAt < 500) return;
   preloaderState.lastToggleAt = now;
   preloaderState.isSwitchingLanguage = true;
 
   const wasMenuOpen = !!(mobileMenu && mobileMenu.classList.contains("open"));
+  if (wasMenuOpen && !keepMenuOpen) {
+    mobileMenu.classList.remove("open");
+    if (burgerBtn) {
+      burgerBtn.classList.remove("active");
+      burgerBtn.setAttribute("aria-expanded", "false");
+    }
+    document.body.classList.remove("menu-open");
+    document.body.style.overflow = "";
+  }
   const lastScrollY = window.scrollY;
   setPreloaderVisible(true);
   applyLanguage(nextLang);
@@ -259,7 +269,7 @@ function switchLanguageWithPreloader(nextLang) {
     preloaderState.isSwitchingLanguage = false;
     stopPreloaderTextCycle();
     window.scrollTo(0, lastScrollY);
-    if (wasMenuOpen && mobileMenu) {
+    if (wasMenuOpen && mobileMenu && keepMenuOpen) {
       mobileMenu.classList.add("open");
       burgerBtn.classList.add("active");
       burgerBtn.setAttribute("aria-expanded", "true");
@@ -465,14 +475,14 @@ if (burgerBtn && mobileMenu) {
     const langToggle = e.target.closest("[data-lang-toggle]");
     if (langBtn) {
       const lang = langBtn.getAttribute("data-lang");
-      if (lang) switchLanguageWithPreloader(lang);
+      if (lang) switchLanguageWithPreloader(lang, { keepMenuOpen: false });
       e.stopPropagation();
       return;
     }
     if (langToggle) {
       const current = localStorage.getItem(LS_KEY) || "ru";
       const next = current === "ru" ? "en" : "ru";
-      switchLanguageWithPreloader(next);
+      switchLanguageWithPreloader(next, { keepMenuOpen: false });
       e.stopPropagation();
       return;
     }
@@ -1425,6 +1435,9 @@ function initAwardsModal() {
   const titleEl = modal.querySelector(".award-modal__title");
   const textEl = modal.querySelector(".award-modal__text");
   const closeEls = modal.querySelectorAll("[data-award-close]");
+  const formEl = modal.querySelector("#awardModalForm");
+  const nameInput = formEl ? formEl.querySelector('input[name="name"]') : null;
+  const phoneInput = formEl ? formEl.querySelector('input[name="phone"]') : null;
 
   const openModal = (btn) => {
     const lang = (document.documentElement.lang || "ru").toLowerCase().startsWith("en") ? "en" : "ru";
@@ -1455,6 +1468,90 @@ function initAwardsModal() {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
   });
+
+  if (formEl && nameInput && phoneInput) {
+    const createError = (input) => {
+      const el = document.createElement("div");
+      el.className = "award-modal__error";
+      input.insertAdjacentElement("afterend", el);
+      return el;
+    };
+
+    const nameError = createError(nameInput);
+    const phoneError = createError(phoneInput);
+    const successEl = document.createElement("div");
+    successEl.className = "award-modal__success";
+    formEl.insertAdjacentElement("beforeend", successEl);
+
+    const t = (key) => {
+      const lang = document.documentElement.lang === "en" ? "en" : "ru";
+      return (translations[lang] && translations[lang][key]) || "";
+    };
+
+    function validateName(value) {
+      const v = (value || "").trim();
+      if (!v) return t("form_error_name_required");
+      const words = v.split(/\s+/).filter(Boolean);
+      if (!words.length || words.some((w) => w.length < 2)) {
+        return t("form_error_name_short");
+      }
+      if (!/[A-Za-zА-Яа-яЁё]/.test(v)) {
+        return t("form_error_name_invalid");
+      }
+      return "";
+    }
+
+    function validatePhone(value) {
+      const v = (value || "").trim();
+      if (!v) return t("form_error_phone_required");
+      if (/[A-Za-zА-Яа-яЁё]/.test(v)) return t("form_error_phone_invalid");
+      if (!/^[\d\s()+-]+$/.test(v)) return t("form_error_phone_invalid");
+      const clean = v.replace(/\D+/g, "");
+      if (!/^7\d{10}$/.test(clean)) return t("form_error_phone_invalid");
+      return "";
+    }
+
+    function renderErrors() {
+      const nameMsg = validateName(nameInput.value);
+      const phoneMsg = validatePhone(phoneInput.value);
+      nameError.textContent = nameMsg;
+      phoneError.textContent = phoneMsg;
+      return !nameMsg && !phoneMsg;
+    }
+
+    nameInput.addEventListener("input", () => {
+      if (nameError.textContent) nameError.textContent = validateName(nameInput.value);
+    });
+
+    phoneInput.addEventListener("input", () => {
+      if (phoneError.textContent) phoneError.textContent = validatePhone(phoneInput.value);
+    });
+
+    formEl.addEventListener("submit", (e) => {
+      successEl.textContent = "";
+      if (!renderErrors()) {
+        e.preventDefault();
+        return;
+      }
+
+      const action = (formEl.getAttribute("action") || "").trim();
+      if (!action || action === "#") {
+        e.preventDefault();
+        formEl.reset();
+        nameError.textContent = "";
+        phoneError.textContent = "";
+        successEl.textContent = t("form_success");
+      }
+    });
+
+    const langObserver = new MutationObserver(() => {
+      if (nameError.textContent) nameError.textContent = validateName(nameInput.value);
+      if (phoneError.textContent) phoneError.textContent = validatePhone(phoneInput.value);
+      if (successEl.textContent) successEl.textContent = t("form_success");
+    });
+
+    langObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+  }
 }
 
 initAwardsModal();
