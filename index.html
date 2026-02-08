@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="page">
-                        
+
     <!-- HEADER -->
     <header class="header">
         <div class="container header__inner">
@@ -484,7 +484,9 @@
         масложировой отрасли страны.
     </p>
 
-    <div class="awards__grid">
+    <div class="awards-slider" id="awardsSlider">
+      <div class="awards-slider__viewport" id="awardsViewport">
+        <div class="awards__grid awards-slider__track" id="awardsTrack">
 
         <!-- CARD 1 -->
         <div class="award-card">
@@ -559,6 +561,11 @@
         <button class="award-card__button" data-i18n="award_button" data-award-title-ru="Связаться с компанией «Лучший экспортер»" data-award-title-en="Contact the Best Exporter awardee" data-award-text-ru="Свяжитесь с компанией‑лауреатом «Лучший экспортер» для обсуждения сотрудничества." data-award-text-en="Contact the Best Exporter awardee to discuss cooperation.">Связаться</button>
         </div>
 
+        </div>
+      </div>
+      <div class="awards-progress" aria-hidden="true">
+        <span class="awards-progress__bar"></span>
+      </div>
     </div>
     </div>
 </section>
