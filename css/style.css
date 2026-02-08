@@ -252,7 +252,7 @@ button { font: inherit; }
 :root{
   --container-max: 2200px; /* увеличено для поддержки супер‑широких мониторов */
   --container-pad: clamp(24px, 4vw, 80px);
-  --header-offset: 120px;
+  --header-offset: 160px;
 
   --orange: #F28B22;
   --green: #1E8E3E;
