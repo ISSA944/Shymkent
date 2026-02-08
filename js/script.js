@@ -515,7 +515,7 @@ function smoothScrollToTarget(href, updateActiveOnDone) {
   if (!target) return;
   const startY = window.scrollY;
   const header = document.querySelector(".header");
-  const headerOffset = (header ? header.offsetHeight : 0) + 8;
+  const headerOffset = (header ? header.offsetHeight : 0) + 28;
   const targetY = target.getBoundingClientRect().top + window.scrollY - headerOffset;
   const distance = targetY - startY;
   const duration = 650;
@@ -581,7 +581,7 @@ function getSectionTargets() {
 
 function updateActiveLink() {
   const header = document.querySelector(".header");
-  const headerOffset = (header ? header.offsetHeight : 0) + 20;
+  const headerOffset = (header ? header.offsetHeight : 0) + 40;
   const scrollY = window.scrollY;
   const probeY = scrollY + headerOffset;
   const targets = getSectionTargets();
