@@ -3037,6 +3037,9 @@ html[lang="en"] .counter__label{
 @media (max-width: 1400px) and (min-width: 721px){
   .awards-slider{
     padding-bottom: 28px;
+    --awards-bleed: var(--container-pad);
+    width: calc(100% + (var(--awards-bleed) * 2));
+    margin-left: calc(var(--awards-bleed) * -1);
   }
 
   .awards-slider__viewport{
@@ -3044,8 +3047,8 @@ html[lang="en"] .counter__label{
     overflow-y: visible;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding: 4px 24px 12px;
-    scroll-padding: 24px;
+    padding: 4px 12px 12px;
+    scroll-padding: 12px;
   }
 
   .awards-slider__viewport::-webkit-scrollbar{
@@ -4009,6 +4012,23 @@ section[id]{
   cursor: grab;
 }
 
+@media (max-width: 1024px){
+  .gallery__wrapper{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 24px;
+    padding-right: 0;
+  }
+
+  .gallery-slider__viewport{
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .gallery-slider__viewport::before,
 .gallery-slider__viewport::after{
   content: none;
@@ -4136,8 +4156,15 @@ section[id]{
 }
 
 @media (max-width: 768px){
+  .gallery__wrapper{
+    padding-left: 12px;
+  }
+
   .gallery-slider__viewport{
-    width: calc(100% - 16px);
+    width: 100%;
+    margin: 0;
+    padding-left: 12px;
+    padding-right: 0;
   }
 
   .gallery-slide{
