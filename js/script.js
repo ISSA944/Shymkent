@@ -1298,6 +1298,64 @@ function initGallerySlider() {
 
 initGallerySlider();
 
+function initAwardsSlider() {
+  const slider = document.getElementById("awardsSlider");
+  const viewport = document.getElementById("awardsViewport");
+  const track = document.getElementById("awardsTrack");
+  if (!slider || !viewport || !track) return;
+
+  const progressBar = slider.querySelector(".awards-progress__bar");
+  const mq = window.matchMedia("(max-width: 1400px) and (min-width: 721px)");
+  let cleanup = null;
+
+  const setup = () => {
+    if (!mq.matches) {
+      if (cleanup) {
+        cleanup();
+        cleanup = null;
+      }
+      viewport.scrollLeft = 0;
+      if (progressBar) progressBar.style.width = "0%";
+      return;
+    }
+
+    if (cleanup) return;
+
+    function updateProgress() {
+      if (!progressBar) return;
+      const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+      if (maxScroll <= 0) {
+        progressBar.style.width = "0%";
+        return;
+      }
+      const pct = Math.min(1, Math.max(0, viewport.scrollLeft / maxScroll));
+      progressBar.style.width = `${Math.round(pct * 100)}%`;
+    }
+
+    const onScroll = () => updateProgress();
+    const onResize = () => updateProgress();
+
+    viewport.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+
+    requestAnimationFrame(updateProgress);
+
+    cleanup = () => {
+      viewport.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+    };
+  };
+
+  setup();
+  if (mq.addEventListener) {
+    mq.addEventListener("change", setup);
+  } else {
+    mq.addListener(setup);
+  }
+}
+
+initAwardsSlider();
+
 function initAdvantagesSlider() {
   const slider = document.getElementById("advantagesSlider");
   const track = document.getElementById("advantagesTrack");
