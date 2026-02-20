@@ -2188,6 +2188,10 @@ html[lang="en"] .counter__label{
   background: #FFFFFF;
 }
 
+.gallery-section > .container{
+  padding-right: 0;
+}
+
 .gallery__title{
   margin: 0 0 clamp(40px, 5vw, 60px);
   font-family: "Montserrat Alternates", "Raleway", system-ui, sans-serif;
@@ -2199,9 +2203,8 @@ html[lang="en"] .counter__label{
 }
 
 .gallery__wrapper{
-  --gallery-right-bleed: clamp(18px, 2.2vw, 38px);
-  width: calc(100% + var(--gallery-right-bleed));
-  margin: 0 calc(var(--gallery-right-bleed) * -1) 0 0;
+  width: 100%;
+  margin: 0;
   padding-left: 0;
   padding-right: 0;
   overflow: hidden;
@@ -4007,6 +4010,7 @@ section[id]{
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
+  border-radius: 12px;
   padding: 0;
   width: 100%;
   margin: 0;
@@ -4017,10 +4021,9 @@ section[id]{
 
 @media (max-width: 1024px){
   .gallery__wrapper{
-    width: calc(100% + 24px);
-    margin-left: -24px;
-    margin-right: 0;
-    padding-left: 24px;
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
     padding-right: 0;
   }
 
@@ -4051,7 +4054,7 @@ section[id]{
 
 .gallery-slider__track{
   display: flex;
-  gap: clamp(12px, 2vw, 24px);
+  gap: 0;
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
   position: relative;
@@ -4062,8 +4065,9 @@ section[id]{
   flex: 0 0 clamp(640px, 72vw, 1060px);
   aspect-ratio: 764.57 / 436.9;
   position: relative;
-  border-radius: 12px;
-  border: none;
+  border-radius: 0;
+  border: 0;
+  outline: 0;
   overflow: hidden;
   margin-top: 0;
   transform: none;
@@ -4084,11 +4088,16 @@ section[id]{
   content: none;
 }
 
-.gallery-slide img{
+.gallery-slide__image{
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.gallery-slide__image--trim-right{
+  width: calc(100% + 3px);
+  transform: translateX(1px);
 }
 
 .gallery-arrow{
@@ -4165,10 +4174,9 @@ section[id]{
 
 @media (max-width: 768px){
   .gallery__wrapper{
-    width: calc(100% + 12px);
-    margin-left: -12px;
-    margin-right: 0;
-    padding-left: 12px;
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
     padding-right: 0;
   }
 

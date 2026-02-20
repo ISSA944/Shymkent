@@ -1241,9 +1241,9 @@ function initGallerySlider() {
   const counterTotal = counter ? counter.querySelector(".gallery-counter__total") : null;
 
   const slides = [
-    { src: "assets/image (3).png", alt: "Production facilities" },
-    { src: "assets/image (4).png", alt: "Product packaging" },
-    { src: "assets/image (5).png", alt: "Production equipment" }
+    { src: "assets/image (3).png", alt: "Production facilities", trimRightEdge: false },
+    { src: "assets/image (4).png", alt: "Product packaging", trimRightEdge: true },
+    { src: "assets/image (5).png", alt: "Production equipment", trimRightEdge: false }
   ];
 
   if (slides.length === 0) return;
@@ -1251,7 +1251,8 @@ function initGallerySlider() {
   const renderSlides = [slides[slides.length - 1], ...slides, slides[0]];
   track.innerHTML = renderSlides.map((slide, i) => {
     const activeClass = i === 1 ? " is-active" : "";
-    return `<div class="gallery-slide${activeClass}" data-slide-index="${i}"><img src="${slide.src}" alt="${slide.alt}" loading="lazy"></div>`;
+    const imageClass = slide.trimRightEdge ? " gallery-slide__image gallery-slide__image--trim-right" : " gallery-slide__image";
+    return `<div class="gallery-slide${activeClass}" data-slide-index="${i}"><img class="${imageClass.trim()}" src="${slide.src}" alt="${slide.alt}" loading="lazy"></div>`;
   }).join("");
 
   let index = 1;
@@ -1300,7 +1301,8 @@ function initGallerySlider() {
     track.style.transition = animated
       ? "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)"
       : "none";
-    track.style.transform = `translate3d(${getOffsetByIndex(index)}px, 0, 0)`;
+    const snappedOffset = Math.round(getOffsetByIndex(index));
+    track.style.transform = `translate3d(${snappedOffset}px, 0, 0)`;
     markActiveSlide();
     updateCounter();
   }
@@ -1356,7 +1358,8 @@ function initGallerySlider() {
       if (!isDragging) return;
       dragDelta = e.clientX - dragStartX;
       const base = getOffsetByIndex(index);
-      track.style.transform = `translate3d(${base + dragDelta}px, 0, 0)`;
+      const snappedOffset = Math.round(base + dragDelta);
+      track.style.transform = `translate3d(${snappedOffset}px, 0, 0)`;
     });
 
     const finishDrag = () => {
